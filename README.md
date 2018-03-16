@@ -1,7 +1,7 @@
  # java_socket_chat
 一个用 java socket 完成的简易聊天程序</br>
 
-P2PClient 和 P2PServer 都是用 Myeclipse 2017 写的项目</br>
+P2PClient 和 P2PServer 都是用 MyEclipse 2017 写的项目</br>
 
 ## P2PClient：客户端程序</br>
 ## P2PServer：服务端程序</br>
