@@ -287,7 +287,7 @@ public class Client extends JFrame implements ActionListener {
                     int width = getTextManifest().getDocument().getLength();
                     // 在当前窗口显示的文本后面拼接 发信人+对话日期 ，设置拼接的字符串为"blue"格式
                     getTextManifest().getDocument().insertString(width, sb.toString(),
-																 getTextManifest().getStyle("blue"));
+                            getTextManifest().getStyle("blue"));
                     // getTextManifest().getDocument().insertString(width, ">>"
                     // + message.toString(),
                     // getTextManifest().getStyle("normal"));
