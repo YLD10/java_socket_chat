@@ -16,9 +16,9 @@ import java.util.List;
  */
 public class Server {
 	// 客户端连接维护队列
-	public static List<ServerThread> conns = new ArrayList<ServerThread>();
-	private Socket socket = null; // 客户端socket连接对象（主动请求）
-	private ServerSocket serversocket = null; // 服务端socket连接对象（被动接受）
+	public static List<ServerThread>	conns			= new ArrayList<ServerThread>();
+	private Socket						socket			= null;							// 客户端socket连接对象（主动请求）
+	private ServerSocket				serversocket	= null;							// 服务端socket连接对象（被动接受）
 
 	// 构造函数，另开线程运行程序使得构造函数可以正常结束
 	public Server() {
@@ -32,7 +32,7 @@ public class Server {
 	// 主要执行函数
 	public void Run() {
 		try {
-			 // 初始化服务端socket连接，监听端口32768
+			// 初始化服务端socket连接，监听端口32768
 			setServersocket(new ServerSocket(32768));
 			System.out.println("服务端启动成功！");
 

@@ -17,13 +17,13 @@ import java.net.Socket;
  * 
  */
 public class ServerThread extends Thread {
-	private String loginName = null; // 登录昵称，为用户唯一标识符
-	private Socket socket = null; // socket对象
-	private BufferedReader br = null; // 数据输入流
-	private PrintWriter pw = null; // 数据输出流
-	private Long lastChatTime = null; // 最近的对话时间
-	private boolean isInLine = true; // 是否在线标志位，默认在线
-	private boolean isCanRemove = false; // socket是否可以移除标志位，默认不可移除
+	private String			loginName		= null;		// 登录昵称，为用户唯一标识符
+	private Socket			socket			= null;		// socket对象
+	private BufferedReader	br				= null;		// 数据输入流
+	private PrintWriter		pw				= null;		// 数据输出流
+	private Long			lastChatTime	= null;		// 最近的对话时间
+	private boolean			isInLine		= true;		// 是否在线标志位，默认在线
+	private boolean			isCanRemove		= false;	// socket是否可以移除标志位，默认不可移除
 
 	// 构造函数，初始化socket对象和最近对话时间
 	public ServerThread(Socket socket) throws IOException {

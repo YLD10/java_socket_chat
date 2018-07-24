@@ -23,13 +23,13 @@ import javax.swing.border.EmptyBorder;
  *
  */
 public class Register extends JFrame implements ActionListener {
-	private static final long serialVersionUID = 1L; // 确保对象的序列与反序列正确的版本号校验
-														// 然而我就没用到这个
-	
-	private JPanel panel = null; // 主窗口面板，包含所有控件
-	private JButton button = null; // 登录按钮
-	private JTextField textField = null; // 昵称输入文本框
-	private JLabel labName = null; // 显示标签
+	private static final long	serialVersionUID	= 1L;	// 确保对象的序列与反序列正确的版本号校验
+															// 然而我就没用到这个
+
+	private JPanel				panel				= null;	// 主窗口面板，包含所有控件
+	private JButton				button				= null;	// 登录按钮
+	private JTextField			textField			= null;	// 昵称输入文本框
+	private JLabel				labName				= null;	// 显示标签
 
 	// 构造函数，初始化整个显示窗口
 	public Register() {
@@ -39,7 +39,7 @@ public class Register extends JFrame implements ActionListener {
 		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE); // 设置主窗口的关闭事件为正常退出
 		// 设置主窗口在屏幕的中间位置出现(距屏幕坐标x,y和主窗口大小width:400,height:180)
 		this.setBounds((int) (screensize.getWidth() / 2 - 200), (int) (screensize.getHeight() / 2 - 90), 400, 180);
-		
+
 		setPanel(new JPanel()); // 初始化主面板
 		getPanel().setBorder(new EmptyBorder(5, 5, 5, 5)); // 设置各控件与边界的距离
 		this.setContentPane(getPanel()); // 初始化主面板布局
@@ -56,12 +56,12 @@ public class Register extends JFrame implements ActionListener {
 		// 设置登录按钮的位置(距主面板坐标x,y)与大小(宽，高)
 		getButton().setBounds(250, 50, 100, 30);
 		getLabName().setFont(new Font("楷体", 1, 18)); // 设置显示标签的字体
-		
+
 		getButton().addActionListener(this); // 发送按钮监听主窗口动作事件，这是前提
-		
+
 		// 设置主窗口的默认按钮是发送按钮，即点击发送按钮会触发主窗口的动作事件actionPerformed，这是后续
 		this.getRootPane().setDefaultButton(getButton());
-		
+
 		getPanel().add(getLabName()); // 将显示标签添加到主面板中
 		getPanel().add(getTextField()); // 将文本输入框添加到主面板中
 		getPanel().add(getButton()); // 将登录按钮添加到主面板中
@@ -76,7 +76,7 @@ public class Register extends JFrame implements ActionListener {
 	public void actionPerformed(ActionEvent arg0) {
 		// 得到文本输入框的文本，去掉首尾空格
 		String name = getTextField().getText().trim();
-		
+
 		if (name.isEmpty()) { // 如果没有输入任何内容
 			// 弹出提示
 			JOptionPane.showMessageDialog(null, "昵称不能为空！", "警告", JOptionPane.ERROR_MESSAGE);
@@ -92,7 +92,7 @@ public class Register extends JFrame implements ActionListener {
 							new Client(name); // 打开客户端主界面，并传递用户昵称
 						};
 					}.start(); // 线程启动
-					
+
 					this.dispose(); // 主窗口强制销毁
 				}
 			} catch (Exception e) {
